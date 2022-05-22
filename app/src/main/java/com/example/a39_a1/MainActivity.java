@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Bsef19a039 Assignment 1");
         button1 = findViewById(R.id.button1);
     }
     public void SetValue(View view){
