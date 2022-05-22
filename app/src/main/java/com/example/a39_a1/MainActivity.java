@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void SetValue(View view){
         Intent i = new Intent(getApplicationContext(), SecondActivity.class);
+        Button clickedButton = (Button) view;
         i.putExtra("Value1", "Android By Javatpoint");
         i.putExtra("Value2", "Simple Tutorial");
         // Set the request code to any code you like, you can identify the
