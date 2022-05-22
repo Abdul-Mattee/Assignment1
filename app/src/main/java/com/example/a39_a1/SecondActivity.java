@@ -1,20 +1,9 @@
 package com.example.a39_a1;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 import android.widget.TextView;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.a39_a1.databinding.ActivitySecondBinding;
+import android.content.Intent;
 
 public class SecondActivity extends AppCompatActivity {
     TextView textView;
@@ -22,6 +11,13 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         textView = findViewById(R.id.textContainer);
-        
+        Bundle valuesFromMain = getIntent().getExtras();
+        int value = valuesFromMain.getInt("Number");
+        StringBuilder table = new StringBuilder();
+        for (int i = 1;i<11;i++){
+            String tableLine = String.format("%s  x  %s =\t%s\n", value, i,value*i); ;
+            table.append(tableLine);
+        }
+        textView.setText(table);
     }
 }
